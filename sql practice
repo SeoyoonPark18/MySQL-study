@@ -1,0 +1,47 @@
+
+/* 디지털미디어학과 2019111253 박서윤 */
+
+/* A.1 문제3 */
+select distinct department_id , job_id
+from employees;
+
+/* A.2 문제2 */
+select sysdate();
+
+select (last_name)as "Name", employee_id, hire_date
+from employees
+where hire_date between DATE_FORMAT('19950520', '%Y%m%d') and DATE_FORMAT('19960520', '%Y%m%d')
+order by hire_date;
+
+/* A.2 문제3 */
+select concat(first_name, ' ',last_name)as "Name", salary, job_id, commission_pct
+from employees
+where commission_pct is not null
+order by salary desc, commission_pct desc;
+
+/* A.4 문제2 */
+select job_id, avg(salary) as "Avg Salary"
+from employees
+group by job_id
+having avg(salary) > 10000
+order by avg(salary) desc;
+
+/* A.5 문제1 */
+select department_name, count(e.department_id) as "COUNT(e.employee_id)"
+from Employees e, Departments d
+where e.department_id = d.department_id
+group by department_name, e.department_id
+having count(e.department_id) > 4
+order by count(e.department_id) desc;
+
+/* A.5 문제2 */
+select concat(first_name, ' ',last_name)as "Name", job_id, department_name, hire_date, salary, grade_level
+
+
+/* A.6 문제3 */
+
+/* A.6 문제4 */
+
+/* A.7 문제2 */
+
+/* A.7 문제2-계속 */
